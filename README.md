@@ -187,7 +187,8 @@ struct ExampleApp: App {
               }
         }
     }
-}```
+}
+```
 
 ## License
 
