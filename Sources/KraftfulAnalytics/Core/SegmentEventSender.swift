@@ -6,8 +6,8 @@ extension KraftfulAnalytics {
   public class SegmentEventSender: EventSender {
     private var analytics: Analytics;
 
-    init(key: String) {
-      let configuration = Configuration(writeKey: key)
+    init(writeKey: String) {
+      let configuration = Configuration(writeKey: writeKey)
         .trackApplicationLifecycleEvents(true)
         .flushInterval(10)
       

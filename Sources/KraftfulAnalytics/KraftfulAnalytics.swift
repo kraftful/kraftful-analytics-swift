@@ -6,8 +6,8 @@ public struct KraftfulAnalytics {
   /**
     Initializes the KraftfulAnalytics library using the supplied write key
     */
-  public static func initialize(key: String) {
-    KraftfulAnalytics.initializeWith(sender: SegmentEventSender(key: key))
+  public static func initialize(writeKey: String) {
+    KraftfulAnalytics.initializeWith(sender: SegmentEventSender(writeKey: writeKey))
   }
 
   /**
