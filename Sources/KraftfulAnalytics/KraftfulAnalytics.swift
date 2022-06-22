@@ -1,16 +1,20 @@
 import Segment
 
 public struct KraftfulAnalytics {
-  private static var analytics: Analytics? = nil
+  private static var analytics: EventSender? = nil
 
   /**
     Initializes the KraftfulAnalytics library using the supplied write key
     */
-  public static func initialize(key: String) {
-    let configuration = Configuration(writeKey: key)
-      .trackApplicationLifecycleEvents(true)
-      .flushInterval(10)
-    analytics = Analytics(configuration: configuration)
+  public static func initialize(writeKey: String) {
+    KraftfulAnalytics.initializeWith(sender: SegmentEventSender(writeKey: writeKey))
+  }
+
+  /**
+   Initializes the KraftfulAnalytics library using the supplied sender (for testing)
+   */
+  public static func initializeWith(sender: EventSender) {
+    analytics = sender
   }
 
   /**
@@ -100,12 +104,14 @@ public struct KraftfulAnalytics {
   }
 }
 
-struct TrackFeatureUseProperties: Codable {
-  let kohortTrack: Int
-  let kohortStepName: String
-  let kohortFeature: String
-}
+extension KraftfulAnalytics {
+  public struct TrackFeatureUseProperties: Codable {
+    let kohortTrack: Int
+    let kohortStepName: String
+    let kohortFeature: String
+  }
 
-struct TrackBaseProperties: Codable {
-  let kohortTrack: Int
+  public struct TrackBaseProperties: Codable {
+    let kohortTrack: Int
+  }
 }
