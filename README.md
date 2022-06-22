@@ -12,14 +12,14 @@ Add the package as a dependency;
 
 The KraftfulAnalytics API exposes the following methods:
 
-### `initialize(key: String)`
+### `initialize(writeKey: String)`
 
 Add the initialize call to your App's `init()` method.
 
 ```swift
 struct ExampleApp: App {
     init() {
-        KraftfulAnalytics.initialize(key: "YOUR-WRITE-KEY")
+        KraftfulAnalytics.initialize(writeKey: "YOUR-WRITE-KEY")
     }
 
     var body: some View { .... }
