@@ -23,12 +23,8 @@ public struct KraftfulAnalytics {
   public static func trackFeatureUse(feature: String) {
     if let client = analytics {
       client.track(
-        name: feature,
-        properties: TrackFeatureUseProperties(
-          kohortTrack: 1,
-          kohortStepName: "Feature use",
-          kohortFeature: feature
-        ))
+        name: feature
+      )
     }
   }
 
@@ -38,10 +34,8 @@ public struct KraftfulAnalytics {
   public static func trackSignInStart() {
     if let client = analytics {
       client.track(
-        name: "Sign In Start",
-        properties: TrackBaseProperties(
-          kohortTrack: 1
-        ))
+        name: "Sign In Start"
+      )
     }
   }
 
@@ -54,10 +48,8 @@ public struct KraftfulAnalytics {
         client.identify(userId: userIdVal)
       }
       client.track(
-        name: "Sign In Success",
-        properties: TrackBaseProperties(
-          kohortTrack: 1
-        ))
+        name: "Sign In Success"
+      )
     }
   }
 
@@ -67,10 +59,8 @@ public struct KraftfulAnalytics {
   public static func trackConnectionStart() {
     if let client = analytics {
       client.track(
-        name: "Connection Start",
-        properties: TrackBaseProperties(
-          kohortTrack: 1
-        ))
+        name: "Connection Start"
+      )
     }
   }
 
@@ -80,10 +70,8 @@ public struct KraftfulAnalytics {
   public static func trackConnectionSuccess() {
     if let client = analytics {
       client.track(
-        name: "Connection Success",
-        properties: TrackBaseProperties(
-          kohortTrack: 1
-        ))
+        name: "Connection Success"
+      )
     }
   }
 
@@ -96,22 +84,8 @@ public struct KraftfulAnalytics {
         client.identify(userId: userIdVal)
       }
       client.track(
-        name: "Return",
-        properties: TrackBaseProperties(
-          kohortTrack: 1
-        ))
+        name: "Return"
+      )
     }
-  }
-}
-
-extension KraftfulAnalytics {
-  public struct TrackFeatureUseProperties: Codable {
-    let kohortTrack: Int
-    let kohortStepName: String
-    let kohortFeature: String
-  }
-
-  public struct TrackBaseProperties: Codable {
-    let kohortTrack: Int
   }
 }
