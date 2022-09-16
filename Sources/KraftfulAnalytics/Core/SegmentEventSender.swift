@@ -2,14 +2,17 @@ import Foundation
 import Segment
 
 extension KraftfulAnalytics {
+
   // An EventSender implementation for Segment
   public class SegmentEventSender: EventSender {
+    static let KRAFTFUL_INGESTION_URL = "https://analytics-ingestion.kraftful.com";
     private var analytics: Analytics;
 
-    init(writeKey: String) {
-      let configuration = Configuration(writeKey: writeKey)
+    init(apiKey: String) {
+      let configuration = Configuration(writeKey: apiKey)
         .trackApplicationLifecycleEvents(true)
         .flushInterval(10)
+        .apiHost(Self.KRAFTFUL_INGESTION_URL)
       
       analytics = Analytics(configuration: configuration)
     }

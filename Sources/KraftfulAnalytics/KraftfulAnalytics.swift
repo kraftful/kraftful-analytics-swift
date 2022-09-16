@@ -4,10 +4,10 @@ public struct KraftfulAnalytics {
   private static var analytics: EventSender? = nil
 
   /**
-    Initializes the KraftfulAnalytics library using the supplied write key
+    Initializes the KraftfulAnalytics library using the supplied API key
     */
-  public static func initialize(writeKey: String) {
-    KraftfulAnalytics.initializeWith(sender: SegmentEventSender(writeKey: writeKey))
+  public static func initialize(apiKey: String) {
+    KraftfulAnalytics.initializeWith(sender: SegmentEventSender(apiKey: apiKey))
   }
 
   /**
