@@ -3,10 +3,10 @@
     {
       "identity" : "analytics-swift",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:segmentio/analytics-swift.git",
+      "location" : "git@github.com:kraftful/analytics-swift.git",
       "state" : {
-        "revision" : "8ae3136bffaa139a690e7841bf63143605041540",
-        "version" : "1.3.0"
+        "branch" : "kraftful/update-api-host",
+        "revision" : "06f0723215d9a5e7b48bc73891179b863d3a1959"
       }
     },
     {
