@@ -19,7 +19,10 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "git@github.com:segmentio/analytics-swift.git", from: "1.3.0"),
+        .package(
+            url: "git@github.com:kraftful/analytics-swift.git",
+            branch: "kraftful/update-api-host"
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

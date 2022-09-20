@@ -5,7 +5,7 @@ extension KraftfulAnalytics {
 
   // An EventSender implementation for Segment
   public class SegmentEventSender: EventSender {
-    static let KRAFTFUL_INGESTION_URL = "https://analytics-ingestion.kraftful.com";
+    static let KRAFTFUL_INGESTION_URL = "analytics-ingestion.kraftful.com";
     private var analytics: Analytics;
 
     init(apiKey: String) {
